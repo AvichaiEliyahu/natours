@@ -20,3 +20,8 @@ The app includes user registration/login, tour browsing, reviews, and user profi
 
 This project reflects production-level practices and aims to demonstrate my backend engineering capabilities for potential employers or collaborators.
 
+Natours is now live and running, please visit it here: https://natours-avichai-5299651fba99.herokuapp.com/
+
+The full API is documented and available to explore and test via Postman:
+
+👉 View API Docs on Postman: https://documenter.getpostman.com/view/44815856/2sB2qdgKvL#intro
