@@ -1,27 +1,49 @@
-# Natours Application
+# 🌍 Natours – Travel Tour Booking API & Web App
 
-Built using Node JS, Express, MongoDB, and Mongoose
+A full-featured Node.js web application designed to showcase **real-world backend engineering** using modern tools and best practices.
 
-This is a full-featured Node.js web application built from the ground up, designed to demonstrate real-world backend development skills using modern technologies. The project showcases my knowledge in:
+**🔗 Live App**: [https://natours-avichai-5299651fba99.herokuapp.com/](https://natours-avichai-5299651fba99.herokuapp.com/)  
+**📬 API Docs (Postman)**: [View API Documentation](https://documenter.getpostman.com/view/44815856/2sB2qdgKvL#intro)
 
-Node.js & Express for building scalable RESTful APIs
+---
 
-MongoDB with Mongoose for robust data modeling and querying
+## 🚀 Features
 
-JWT-based Authentication and Authorization for secure user access
+- ✨ RESTful API for tours, users, and reviews
+- 🔐 JWT-based authentication & role-based access control
+- 📦 MongoDB with Mongoose ODM for powerful data modeling
+- 🛡️ Security: sanitization, rate limiting, helmet, etc.
+- 📁 MVC pattern and modular codebase for maintainability
+- ☁️ Deployed to Heroku
 
-Error handling, data validation, and security hardening (e.g., sanitization, rate limiting)
+---
 
-MVC architecture, modular code structure, and middleware usage
+## 🛠️ Tech Stack
 
-Cloud deployment (Heroku)
+- **Backend**: Node.js, Express
+- **Database**: MongoDB, Mongoose
+- **Authentication**: JWT, bcrypt
+- **Templating**: Pug (server-rendered views)
+- **Client-side JS**: Mapbox integration, form handling
+- **Deployment**: Heroku
+- **Testing Tools**: Postman
 
-The app includes user registration/login, tour browsing, reviews, and user profile management. It’s designed with a clean UI (using Pug templates) and enhanced with client-side JavaScript (e.g., interactive maps with Mapbox).
+---
 
-This project reflects production-level practices and aims to demonstrate my backend engineering capabilities for potential employers or collaborators.
+## 👤 What This Project Demonstrates
 
-Natours is now live and running, please visit it here: https://natours-avichai-5299651fba99.herokuapp.com/
+This app was built from scratch to illustrate:
 
-The full API is documented and available to explore and test via Postman:
+- Strong understanding of **Node.js & Express architecture**
+- Building secure, scalable **REST APIs**
+- **Authentication/authorization** using JWT
+- **Database modeling & querying** with Mongoose
+- Implementing **error handling, middleware**, and async patterns
+- **Environment configuration** and deployment workflows
 
-👉 View API Docs on Postman: https://documenter.getpostman.com/view/44815856/2sB2qdgKvL#intro
+---
+
+## 📄 API Documentation
+
+Test and explore the API endpoints using Postman:  
+👉 [https://documenter.getpostman.com/view/44815856/2sB2qdgKvL#intro](https://documenter.getpostman.com/view/44815856/2sB2qdgKvL#intro)
