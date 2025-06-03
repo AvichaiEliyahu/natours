@@ -1,5 +1,6 @@
 import { login, logout } from './login';
 import { updateSettings } from './updateSettings';
+import { bookTour } from './booking';
 
 const logoutBtn = document.querySelector('.nav__el--logout');
 if (logoutBtn) {
@@ -44,5 +45,15 @@ if (userPasswordForm) {
     document.getElementById('password-current').value = '';
     document.getElementById('password').value = '';
     document.getElementById('password-confirm').value = '';
+  });
+}
+
+const bookBtn = document.getElementById('book-tour');
+if (bookBtn) {
+  bookBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.target.textContent = 'Processing...';
+    const { tourId } = e.target.dataset;
+    bookTour(tourId);
   });
 }
