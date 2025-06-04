@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
+const User = require('../models/userModel');
 //const User = require('./userModel');
 //const validator = require('validator');
 
@@ -115,6 +116,13 @@ const tourSchema = new mongoose.Schema(
       {
         type: mongoose.Schema.ObjectId,
         ref: 'User',
+        validate: {
+          validator: async function (userId) {
+            const user = await User.findById(userId);
+            return user && ['guide', 'lead-guide'].includes(user.role);
+          },
+          message: 'User must have role "guide" or "lead-guide".',
+        },
       },
     ],
   },
@@ -154,6 +162,14 @@ tourSchema.pre('save', function (next) {
 tourSchema.pre(/^find/, function (next) {
   this.find({ secretTour: { $ne: true } });
   this.start = Date.now();
+  next();
+});
+
+tourSchema.pre(/^find/, function (next) {
+  this.populate({
+    path: 'guides',
+    select: 'name email',
+  });
   next();
 });
 
