@@ -2,11 +2,17 @@ import { login, logout } from './login';
 import { updateSettings } from './updateSettings';
 import { bookTour } from './booking';
 
+/**
+ * Handles logout.
+ */
 const logoutBtn = document.querySelector('.nav__el--logout');
 if (logoutBtn) {
   logoutBtn.addEventListener('click', logout);
 }
 
+/**
+ * Handles login.
+ */
 const loginForm = document.querySelector('.form--login');
 if (loginForm) {
   document.querySelector('.form').addEventListener('submit', (e) => {
@@ -17,6 +23,9 @@ if (loginForm) {
   });
 }
 
+/**
+ * Handles user data form for updating the user data.
+ */
 const userDataForm = document.querySelector('.form-user-data');
 if (userDataForm) {
   userDataForm.addEventListener('submit', (e) => {
@@ -27,6 +36,9 @@ if (userDataForm) {
   });
 }
 
+/**
+ * handles user data form for updating the user password.
+ */
 const userPasswordForm = document.querySelector('.form-user-password');
 if (userPasswordForm) {
   userPasswordForm.addEventListener('submit', async (e) => {
@@ -48,6 +60,9 @@ if (userPasswordForm) {
   });
 }
 
+/**
+ * Handles tour booking
+ */
 const bookBtn = document.getElementById('book-tour');
 if (bookBtn) {
   bookBtn.addEventListener('click', (e) => {

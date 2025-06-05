@@ -9,14 +9,13 @@ const reviewSchema = new mongoose.Schema(
     },
     rating: {
       type: Number,
-      //required: [true, 'Please add a rating!'],
+      required: [true, 'Please add a rating!'],
       min: 1,
       max: 5,
     },
     createdAt: {
       type: Date,
       default: Date.now(),
-      //select: false,
     },
     tour: {
       type: mongoose.Schema.ObjectId,

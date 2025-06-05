@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
 const User = require('../models/userModel');
-//const User = require('./userModel');
-//const validator = require('validator');
 
 const tourSchema = new mongoose.Schema(
   {
@@ -19,7 +17,6 @@ const tourSchema = new mongoose.Schema(
         10,
         'A tour name must have more or equal then 10 characters.',
       ],
-      // validate: [validator.isAlpha, 'Tour name must only contain letters.'],
     },
     slug: String,
     duration: {
@@ -62,7 +59,6 @@ const tourSchema = new mongoose.Schema(
         message: 'Discount price ({VALUE}) should be below regular price.',
       },
     },
-    // priceDiscount: Number,
     summary: {
       type: String,
       trim: true,
@@ -152,7 +148,7 @@ tourSchema.pre('save', function (next) {
   next();
 });
 
-// embadding guides into tours document
+// example for embadding guides into tour document
 // tourSchema.pre('save', async function (next) {
 //   const guidesPromises = this.guides.map(async (id) => await User.findById(id));
 //   this.guides = await Promise.all(guidesPromises);
@@ -164,19 +160,6 @@ tourSchema.pre(/^find/, function (next) {
   this.start = Date.now();
   next();
 });
-
-tourSchema.pre(/^find/, function (next) {
-  this.populate({
-    path: 'guides',
-    select: 'name email',
-  });
-  next();
-});
-
-// tourSchema.pre('aggregate', function (next) {
-//   this.pipeline().unshift({ $match: { secretTour: { $ne: true } } });
-//   next();
-// });
 
 const Tour = mongoose.model('Tour', tourSchema);
 
